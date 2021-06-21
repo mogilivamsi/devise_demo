@@ -1,0 +1,9 @@
+development:
+  adapter : postgresql
+  pool : 5
+  database  : sai
+  host : localhost
+  username : vamsi9
+  password  : 9704
+  port : 5432
+  encoding : UTF8
