@@ -62,30 +62,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_023658) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "adharcards", force: :cascade do |t|
-    t.integer "number"
-    t.bigint "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["person_id"], name: "index_adharcards_on_person_id"
-  end
-
-  create_table "books", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.bigint "store_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["store_id"], name: "index_books_on_store_id"
-  end
-
-  create_table "brands", force: :cascade do |t|
-    t.string "name"
-    t.bigint "mobile_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mobile_id"], name: "index_brands_on_mobile_id"
-  end
+  
 
   create_table "contents", force: :cascade do |t|
     t.string "name"
@@ -93,45 +70,9 @@ ActiveRecord::Schema.define(version: 2021_06_21_023658) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "flowers", force: :cascade do |t|
-    t.string "name"
-    t.string "colour"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "price"
-  end
 
-  create_table "mobiles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "price"
-  end
 
-  create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
-  create_table "players", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.integer "place"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
