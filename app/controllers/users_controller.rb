@@ -1,5 +1,17 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+
+  def index
+
+    @users = User.all
+
+  end
+
+  def search
+
+    @users = User.search(params[:query])
+
+  end
 
  private
 
@@ -16,6 +28,7 @@ class UsersController < ApplicationController
     render json: { errors: current_user.errors }, status: :unprocessable_entity
  end
  end
+
 
 
 
